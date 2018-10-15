@@ -5,7 +5,7 @@
 sudo apt update && sudo apt upgrade -y 
 
 # install multimedia codecs
-sudo apt install -y ubuntu-restricted-extras mint-meta-codecs vim git httpie 
+sudo apt install -y ubuntu-restricted-extras mint-meta-codecs vim httpie 
 
 # improve system power management
 sudo add-apt-repository ppa:linrunner/tlp && \
@@ -64,6 +64,11 @@ sudo tar -zxvf apache-maven-3.3.9-bin.tar.gz && \
 sudo rm -f apache-maven-3.3.9-bin.tar.gz && \
 export MAVEN_HOME=/opt/apache-maven-3.3.9 && \
 export PATH=$MAVEN_HOME/bin:$PATH 
+
+# install git
+sudo apt install -y git && \
+git config --global user.email "<YOUR_EMAIL_ADDRESS/>" && \
+git config --global user.name  "<YOUR_FIRST_AND_LASTNAME/>"
 
 # install Docker
 sudo apt install -y docker.io && \ 
