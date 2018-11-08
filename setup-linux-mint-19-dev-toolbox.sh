@@ -66,12 +66,12 @@ export MAVEN_HOME=/opt/apache-maven-3.3.9 && \
 export PATH=$MAVEN_HOME/bin:$PATH 
 
 # install git
-sudo apt install -y git && \
-git config --global user.email "<YOUR_EMAIL_ADDRESS/>" && \
-git config --global user.name  "<YOUR_FIRST_AND_LASTNAME/>"
+sudo apt install -y git git-flow && \
+git config --global user.email "tommy.brettschneider@device-insight.com" && \
+git config --global user.name  "Tommy Brettschneider"
 
 # install Docker
-sudo apt install -y docker.io && \ 
+sudo apt install -y docker.io docker-compose && \ 
 sudo usermod -a -G docker $USER && \ 
 sudo systemctl start docker && \
 sudo systemctl enable docker 
