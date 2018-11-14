@@ -35,6 +35,9 @@ sudo dpkg-reconfigure fontconfig
 # enable firewall
 sudo ufw enable
 
+# set cmdline language (en_US)
+echo "export LC_ALL=en_US.UTF-8" >> ~/.bashrc
+
 # install chrome browser
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - && \
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list && \
@@ -68,7 +71,11 @@ export PATH=$MAVEN_HOME/bin:$PATH
 # install git
 sudo apt install -y git git-flow && \
 git config --global user.email "tommy.brettschneider@device-insight.com" && \
-git config --global user.name  "Tommy Brettschneider"
+git config --global user.name  "Tommy Brettschneider" && \
+git config --global core.excludesfile '~/.gitignore_global'
+
+# install Postgres
+sudo apt install -y pgadmin3
 
 # install Docker
 sudo apt install -y docker.io docker-compose && \ 
