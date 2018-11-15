@@ -44,6 +44,12 @@ echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sud
 sudo apt update && \
 sudo apt install -y google-chrome-stable
 
+# install app launcher
+sudo apt-add-repository ppa:agornostal/ulauncher
+wget -q -O - https://github.com/Ulauncher/Ulauncher/releases/download/4.3.1.r4/ulauncher_4.3.1.r4_all.deb
+sudo dpkg -i ulauncher_4.3.1.r4_all.deb
+sudo apt-get install -f
+
 # install java8
 sudo add-apt-repository ppa:webupd8team/java && \
 sudo apt update && \
