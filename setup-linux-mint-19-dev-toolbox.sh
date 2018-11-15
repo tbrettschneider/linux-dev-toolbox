@@ -46,9 +46,7 @@ sudo apt install -y google-chrome-stable
 
 # install app launcher
 sudo apt-add-repository ppa:agornostal/ulauncher
-wget -q -O - https://github.com/Ulauncher/Ulauncher/releases/download/4.3.1.r4/ulauncher_4.3.1.r4_all.deb
-sudo dpkg -i ulauncher_4.3.1.r4_all.deb
-sudo apt-get install -f
+sudo apt install ulauncher
 
 # install java8
 sudo add-apt-repository ppa:webupd8team/java && \
