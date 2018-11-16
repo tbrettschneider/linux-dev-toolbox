@@ -38,6 +38,15 @@ sudo ufw enable
 # set cmdline language (en_US)
 echo "export LC_ALL=en_US.UTF-8" >> ~/.bashrc
 
+# setup zsh + plugins
+sudo apt install git-core zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sudo apt install fonts-powerline
+cd ~/.oh-my-zsh/custom/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions
+#TODO: configure plugins in ~/.zshrc file and re-source
+
 # install chrome browser
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add - && \
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list && \
